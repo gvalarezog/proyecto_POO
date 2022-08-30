@@ -15,7 +15,7 @@ from GUI.vtn_principal import Ui_vtn_principal
 # ventanaPrincipal.show()
 #
 # sys.exit(app.exec())
-from Logica.nueva_persona import NuevaPersona
+from Servicio.nueva_persona import NuevaPersona
 
 app = QApplication()
 vtn_nueva_persona = NuevaPersona()
