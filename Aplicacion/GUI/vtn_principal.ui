@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>424</width>
+    <width>500</width>
     <height>299</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>30</y>
+      <y>70</y>
       <width>61</width>
       <height>20</height>
      </rect>
@@ -31,7 +31,7 @@
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>30</y>
+      <y>70</y>
       <width>211</width>
       <height>20</height>
      </rect>
@@ -47,7 +47,7 @@
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>60</y>
+      <y>100</y>
       <width>61</width>
       <height>20</height>
      </rect>
@@ -60,7 +60,7 @@
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>60</y>
+      <y>100</y>
       <width>211</width>
       <height>20</height>
      </rect>
@@ -79,14 +79,14 @@
      </rect>
     </property>
     <property name="text">
-     <string>Guardar</string>
+     <string>Insertar</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="txt_email">
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>90</y>
+      <y>130</y>
       <width>211</width>
       <height>20</height>
      </rect>
@@ -99,7 +99,7 @@
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>100</y>
+      <y>140</y>
       <width>47</width>
       <height>13</height>
      </rect>
@@ -112,7 +112,7 @@
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>160</y>
+      <y>170</y>
       <width>47</width>
       <height>13</height>
      </rect>
@@ -125,7 +125,7 @@
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>160</y>
+      <y>170</y>
       <width>211</width>
       <height>22</height>
      </rect>
@@ -150,9 +150,9 @@
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>130</y>
-      <width>47</width>
-      <height>13</height>
+      <y>30</y>
+      <width>51</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
@@ -163,7 +163,7 @@
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>120</y>
+      <y>30</y>
       <width>211</width>
       <height>20</height>
      </rect>
@@ -175,7 +175,7 @@
    <widget class="QPushButton" name="btn_limpiar">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>190</x>
       <y>210</y>
       <width>75</width>
       <height>23</height>
@@ -185,13 +185,52 @@
      <string>Limpiar</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="btn_consultar">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>30</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Consultar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_actualizar">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>210</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Actualizar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_eliminar">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>210</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Eliminar</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="mnb_menu_principal">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>424</width>
+     <width>500</width>
      <height>21</height>
     </rect>
    </property>
@@ -235,10 +274,11 @@
   </action>
  </widget>
  <tabstops>
+  <tabstop>txt_cedula</tabstop>
+  <tabstop>btn_consultar</tabstop>
   <tabstop>txt_nombre</tabstop>
   <tabstop>txt_apellido</tabstop>
   <tabstop>txt_email</tabstop>
-  <tabstop>txt_cedula</tabstop>
   <tabstop>cb_sexo</tabstop>
   <tabstop>btn_guardar</tabstop>
   <tabstop>btn_limpiar</tabstop>
