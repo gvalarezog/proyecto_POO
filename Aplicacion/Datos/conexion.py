@@ -4,7 +4,7 @@ import pyodbc as bd
 
 
 class Conexion:
-    _SERVIDOR = '192.168.195.250'
+    _SERVIDOR = '192.168.195.251'
     # _SERVIDOR = 'localhost'
     # _SERVIDOR = '127.0.0.1'
     _BBDD = 'APP_MAT'

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>vtn_principal</class>
- <widget class="QMainWindow" name="vtn_principal">
+ <class>vtn_persona</class>
+ <widget class="QMainWindow" name="vtn_persona">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -10,8 +13,14 @@
     <height>299</height>
    </rect>
   </property>
+  <property name="maximumSize">
+   <size>
+    <width>500</width>
+    <height>299</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>Mi Primer GUI v1</string>
+   <string>Persona</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="lbl_nombre">
@@ -224,32 +233,6 @@
      <string>Eliminar</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="mnb_menu_principal">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>500</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="mnu_archivo">
-    <property name="title">
-     <string>Archivo</string>
-    </property>
-    <addaction name="mni_archivo"/>
-    <addaction name="mni_abrir"/>
-    <addaction name="mni_cerrar"/>
-   </widget>
-   <widget class="QMenu" name="mnu_ayuda">
-    <property name="title">
-     <string>Ayuda</string>
-    </property>
-    <addaction name="mni_acerca_de"/>
-   </widget>
-   <addaction name="mnu_archivo"/>
-   <addaction name="mnu_ayuda"/>
   </widget>
   <widget class="QStatusBar" name="stb_estado"/>
   <action name="mni_archivo">

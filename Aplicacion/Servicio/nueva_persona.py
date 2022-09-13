@@ -1,20 +1,21 @@
 import re
 
 from PySide6 import QtGui
-from PySide6.QtWidgets import QMainWindow, QMessageBox
-
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QMainWindow, QMessageBox, QDialog
 
 from Aplicacion.Datos.archivo import Archivo
 from Aplicacion.Datos.persona_dao import PersonaDAO
 from Aplicacion.Dominio.persona import Persona
+from Aplicacion.GUI.vtn_persona import Ui_vtn_persona
 from Aplicacion.GUI.vtn_principal import Ui_vtn_principal
 
 
 class NuevaPersona(QMainWindow):
-    def __init__(self):
+    def __init__(self, persona=None):
         super(NuevaPersona, self).__init__()
-        self.persona = None
-        self.ui = Ui_vtn_principal()
+        self.persona = persona
+        self.ui = Ui_vtn_persona()
         self.ui.setupUi(self)
         self.ui.txt_cedula.setToolTip('Ingrese solo números')
         self.ui.txt_cedula.setValidator(QtGui.QIntValidator())
@@ -23,6 +24,7 @@ class NuevaPersona(QMainWindow):
         self.ui.btn_consultar.clicked.connect(self.seleccionar_por_cedula)
         self.ui.btn_actualizar.clicked.connect(self.actualizar_persona)
         self.ui.btn_eliminar.clicked.connect(self.eliminar_persona)
+        self.cargar()
 
     def insertar(self):
         if self.validar_formulario():
@@ -105,3 +107,11 @@ class NuevaPersona(QMainWindow):
                 QMessageBox.critical(self, 'Error', f"Error al guardar la información \n{respuesta['mensaje']}")
         else:
             QMessageBox.warning(self, 'Advertencia', 'Falta de llenar los datos.')
+
+    def cargar(self):
+        if self.persona:
+            self.ui.txt_nombre.setText(self.persona.nombre)
+            self.ui.txt_apellido.setText(self.persona.apellido)
+            self.ui.txt_email.setText(self.persona.email)
+            self.ui.cb_sexo.setCurrentText(self.persona.sexo)
+            self.ui.txt_cedula.setText(self.persona.cedula)

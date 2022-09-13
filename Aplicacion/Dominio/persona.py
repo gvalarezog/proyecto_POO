@@ -2,17 +2,19 @@
 
 class Persona:
     contador_persona = 0
-    def __init__(self, nombre=None, apellido=None, cedula=None, email=None, sexo=None):
+    def __init__(self, nombre=None, apellido=None, cedula=None, email=None, sexo=None, id=None):
         Persona.contador_persona += 1
-        self._id = Persona.contador_persona
+        # self._id = Persona.contador_persona
+        self._id = id
         self._nombre = nombre
         self._apellido = apellido
         self._cedula = cedula
         self._email = email
+        self._sexo = sexo
 
     def __str__(self):
         return f'Persona [id: {self._id}, nombre: {self._nombre}, apellido: {self._apellido}, ' \
-               f'cedula: {self._cedula}, email: {self._email}]'
+               f'cedula: {self._cedula}, email: {self._email}, sexo: {self._sexo}]'
 
     @property
     def id(self):
