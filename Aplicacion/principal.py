@@ -2,7 +2,7 @@ import sys
 
 from PySide6.QtWidgets import QApplication, QMainWindow
 
-from Aplicacion.Servicio.cargar_personas import CargarPersonas
+from Aplicacion.Servicio.persona_cargar import PersonaCargar
 from GUI.vtn_principal import Ui_vtn_principal
 
 # def guardar():
@@ -16,10 +16,10 @@ from GUI.vtn_principal import Ui_vtn_principal
 # ventanaPrincipal.show()
 #
 # sys.exit(app.exec())
-from Servicio.nueva_persona import NuevaPersona
+from Servicio.persona_modificar import PersonaModificar
 
 app = QApplication()
-vtn_principal = CargarPersonas()
+vtn_principal = PersonaCargar()
 vtn_principal.show()
 # vtn_nueva_persona = NuevaPersona()
 # vtn_nueva_persona.show()

@@ -7,7 +7,7 @@ from Aplicacion.Dominio.persona import Persona
 class PersonaDAO:
     _INSERTAR = "INSERT INTO Personas (nombre,apellido,cedula,email,sexo) VALUES (?,?,?,?,?)"
     _SELECCIONAR_X_CED = "SELECT id, nombre, apellido, cedula, email, sexo FROM Personas WHERE cedula = ? and eliminado=0"
-    _ACTUALIZAR_X_CED = "UPDATE Personas SET nombre=? , apellido=?, email=?, sexo=? WHERE cedula=?"
+    _ACTUALIZAR_X_CED = "UPDATE Personas SET nombre=? , apellido=?, email=?, sexo=?, cedula=? WHERE id=?"
     _ELIMINAR_X_CED = "DELETE FROM Personas WHERE cedula = ?"
     _SELECCIONAR = "SELECT id, nombre, apellido, email, sexo, cedula FROM Personas WHERE eliminado=0"
     _ELIMINAR_LOGICAMENTE = "UPDATE Personas SET eliminado=1 WHERE cedula=?"
@@ -59,7 +59,7 @@ class PersonaDAO:
         mensaje = ''
         try:
             with Conexion.obtenerCursor() as cursor:
-                valores = (persona.nombre, persona.apellido, persona.email, persona.sexo, persona.cedula)
+                valores = (persona.nombre, persona.apellido, persona.email, persona.sexo, persona.cedula, persona.id)
                 registros_modificados = cursor.execute(cls._ACTUALIZAR_X_CED, valores)
                 if registros_modificados.rowcount > 0:
                     exito = True

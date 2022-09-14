@@ -11,10 +11,11 @@ from Aplicacion.GUI.vtn_persona import Ui_vtn_persona
 from Aplicacion.GUI.vtn_principal import Ui_vtn_principal
 
 
-class NuevaPersona(QMainWindow):
-    def __init__(self, persona=None):
-        super(NuevaPersona, self).__init__()
+class PersonaModificar(QMainWindow):
+    def __init__(self, persona=None, vtn_padre=None):
+        super(PersonaModificar, self).__init__()
         self.persona = persona
+        self.vtn_padre = vtn_padre
         self.ui = Ui_vtn_persona()
         self.ui.setupUi(self)
         self.ui.txt_cedula.setToolTip('Ingrese solo números')
@@ -24,6 +25,8 @@ class NuevaPersona(QMainWindow):
         self.ui.btn_consultar.clicked.connect(self.seleccionar_por_cedula)
         self.ui.btn_actualizar.clicked.connect(self.actualizar_persona)
         self.ui.btn_eliminar.clicked.connect(self.eliminar_persona)
+        self.ui.btn_eliminar.hide()
+        self.ui.btn_consultar.hide()
         self.cargar()
 
     def insertar(self):
@@ -55,7 +58,8 @@ class NuevaPersona(QMainWindow):
         self.ui.cb_sexo.currentText() != 'Seleccionar opción')
 
     def capturar_datos(self):
-        self.persona = Persona()
+        if not self.persona:
+            self.persona = Persona()
         self.persona.nombre = self.ui.txt_nombre.text().capitalize()
         self.persona.apellido = self.ui.txt_apellido.text().capitalize()
         self.persona.email = self.ui.txt_email.text()
@@ -115,3 +119,6 @@ class NuevaPersona(QMainWindow):
             self.ui.txt_email.setText(self.persona.email)
             self.ui.cb_sexo.setCurrentText(self.persona.sexo)
             self.ui.txt_cedula.setText(self.persona.cedula)
+
+    def closeEvent(self, event):
+        self.vtn_padre.cargar()
